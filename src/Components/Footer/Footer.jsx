@@ -21,33 +21,11 @@ const Footer = () => {
                 <Logo />
               </Link>
             </div>
-
             <p className="text-gray-300 mb-4">
               Where play finds a home. Discover the finest toys from local
               sellers and create unforgettable childhood memories.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/hadialhamza"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-              >
-                <FaFacebook size={20} />
-              </a>
-              <a
-                href="https://x.com/"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-              >
-                <FaTwitter size={20} />
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
-              >
-                <FaInstagram size={20} />
-              </a>
-            </div>
           </div>
-
           <div>
             <h4 className="text-lg font-semibold mb-4 text-amber-400">
               Quick Links
@@ -87,7 +65,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           <div>
             <h4 className="text-lg font-semibold mb-4 text-amber-400">
               Support
@@ -152,12 +129,48 @@ const Footer = () => {
         </div>
         <div className="mt-4 border-t border-gray-700"></div>
       </div>
-
       <div className="bg-gray-800 py-4">
-        <div className="w-11/12 mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-2 md:mb-0">
-              © 2025 ToyNest. All rights reserved.
+              © {new Date().getFullYear()} ToyNest. All rights reserved.
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Terms and Conditions
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <div className="flex space-x-4">
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/hadialhamza"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
+                  <FaFacebook size={20} />
+                </a>
+                <a
+                  target="_blank"
+                  href="https://x.com/"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
+                  <FaTwitter size={20} />
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/"
+                  className="text-gray-400 hover:text-pink-400 transition-colors"
+                >
+                  <FaInstagram size={20} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
