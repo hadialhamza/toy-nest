@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body {
+  scroll-behavior: smooth;
+}
+
+.my-btn {
+  @apply bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0 shadow-lg transition-all duration-300 transform hover:scale-[1.02];
+}
