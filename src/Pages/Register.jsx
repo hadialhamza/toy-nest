@@ -106,21 +106,7 @@ const Register = () => {
                 />
               </div>
             </div>
-            <div className="form-group">
-              <div className="relative">
-                <MdPhoto
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/90"
-                  size={20}
-                />
-                <input
-                  type="text"
-                  name="photo"
-                  placeholder="Your photo URL here"
-                  className={inputClass}
-                  required
-                />
-              </div>
-            </div>
+
             <div className="form-group">
               <div className="relative">
                 <MdEmail
@@ -136,6 +122,23 @@ const Register = () => {
                 />
               </div>
             </div>
+            
+            <div className="form-group">
+              <div className="relative">
+                <MdPhoto
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/90"
+                  size={20}
+                />
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Your photo URL here"
+                  className={inputClass}
+                  required
+                />
+              </div>
+            </div>
+
             <div className="form-group">
               <div className="relative">
                 <MdLock

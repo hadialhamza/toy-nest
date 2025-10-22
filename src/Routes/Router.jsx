@@ -5,6 +5,8 @@ import AboutUs from "../Pages/AboutUs";
 import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import ProtectedRoute from "./ProtectedRoute";
+import ToyDetails from "../Pages/ToyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +32,15 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
-      }
+      },
+      {
+        path: "/toy/:id",
+        element: (
+          <ProtectedRoute>
+            <ToyDetails />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
 ]);
