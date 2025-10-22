@@ -1,9 +1,13 @@
 import React from "react";
 import Header from "./Header";
+import PopularToys from "./PopularToys";
 
 const Homepage = () => {
   return (
-    <Header/>
+    <div>
+      <Header />
+      <PopularToys />
+    </div>
   );
 };
 
