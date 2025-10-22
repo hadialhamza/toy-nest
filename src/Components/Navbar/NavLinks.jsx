@@ -25,9 +25,9 @@ const NavLinks = () => {
   ];
 
   const activeLink = ({ isActive }) =>
-    `flex items-center gap-2 transition-colors duration-200 ${
+    `flex items-center gap-2 transition-colors duration-200 text-lg ${
       isActive
-        ? "text-primary font-bold underline"
+        ? "text-blue-500 font-bold underline"
         : "text-base-content/80 hover:text-base-content"
     }`;
 

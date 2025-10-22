@@ -1,8 +1,9 @@
 import React from "react";
+import Header from "./Header";
 
 const Homepage = () => {
   return (
-    <h1>Homepage</h1>
+    <Header/>
   );
 };
 
