@@ -50,18 +50,6 @@ const Login = () => {
       });
   };
 
-  const handleGithubLogin = () => {
-    githubLogin()
-      .then((res) => {
-        toast.success("Logged In Successfully");
-        setUser(res.user);
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err.message);
-      });
-  };
-
   const handleForgetPassword = () => {
     const email = emailRef.current.value;
     forgetPassword(email)
@@ -174,13 +162,6 @@ const Login = () => {
                 className="group-hover:scale-110 transition-transform duration-200"
               />
               Continue with Google
-            </button>
-            <button onClick={handleGithubLogin} className={btnClass}>
-              <FaGithub
-                size={24}
-                className="group-hover:scale-110 transition-transform duration-200"
-              />
-              Continue with GitHub
             </button>
           </div>
 
