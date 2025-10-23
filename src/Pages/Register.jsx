@@ -64,7 +64,7 @@ const Register = () => {
     setIsLoading(true);
     googleLogin()
       .then((res) => {
-        toast.success("Logged In Successfully");
+        toast.success("Registration Successfully");
         setUser(res.user);
         navigate("/");
       })
@@ -171,7 +171,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 px-4 rounded-xl my-btn active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full text-md font-semibold py-3 px-4 rounded-xl my-btn active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <>
