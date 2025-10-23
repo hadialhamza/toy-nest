@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
-  const { setUser, emailLogin, googleLogin, githubLogin, forgetPassword } =
+  const { setUser, emailLogin, googleLogin, forgetPassword } =
     useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

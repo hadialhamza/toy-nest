@@ -10,27 +10,28 @@ import {
 } from "react-icons/md";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Context/AuthContext";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const { createUser, profileUpdate, verifyEmail, logout, setUser } =
+  const { createUser, profileUpdate, googleLogin, setUser } =
     useContext(AuthContext);
+
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleRegister = async (event) => {
+  const handleRegister = (event) => {
+    event.preventDefault();
+
     const displayName = event.target.name?.value;
     const photoURL = event.target.photo?.value;
     const email = event.target.email?.value;
     const password = event.target.password?.value;
 
-    event.preventDefault();
-
-    const regExPassword =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
-    if (!regExPassword.test(password)) {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
       toast.error(
-        "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number and one special characters"
+        "Password must be at least 6 characters long and include at least one uppercase and one lowercase letter."
       );
       return;
     }
@@ -38,26 +39,12 @@ const Register = () => {
     setIsLoading(true);
 
     createUser(email, password)
-      .then(() => {
+      .then((userCredential) => {
         toast.success("User Created Successfully");
         profileUpdate({ displayName, photoURL })
           .then(() => {
-            verifyEmail()
-              .then(() => {
-                toast.success("Email Verification Sent");
-                logout()
-                  .then(() => {
-                    setUser(null);
-                    navigate("/login");
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                  });
-              })
-              .catch((err) => {
-                console.log(err);
-                toast.error(err.message);
-              });
+            setUser(userCredential.user);
+            navigate("/");
           })
           .catch((err) => {
             console.log(err);
@@ -67,34 +54,50 @@ const Register = () => {
       .catch((err) => {
         console.log(err);
         toast.error(err.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
   };
 
+  const handleGoogleLogin = () => {
+    setIsLoading(true);
+    googleLogin()
+      .then((res) => {
+        toast.success("Logged In Successfully");
+        setUser(res.user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  const btnClass =
+    "group w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-semibold hover:bg-gray-50 transition-colors duration-200 active:scale-[0.98]";
+
   const inputClass =
-    "w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/50 focus:border-transparent transition-all duration-200";
+    "w-full pl-12 pr-10 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder-gray-400";
 
   return (
-    <div className="min-h-[90vh] flex items-center justify-center p-4 bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-700 animate-gradient-x">
-      <div className="w-11/12 mx-auto flex max-w-5xl rounded-2xl shadow-2xl overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 transform transition-all duration-300 hover:shadow-3xl">
-        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+    <div className="min-h-[85vh] flex items-center justify-center p-4 bg-gray-100">
+      <div className="w-full max-w-md rounded-2xl shadow-xl overflow-hidden bg-white">
+        <div className="w-full p-8">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent mb-2">
-              Join Our Community
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Register your Account
             </h2>
-            <p className="text-white/80 text-sm">
-              Create your account in seconds
-            </p>
           </div>
 
-          <form onSubmit={handleRegister} className="space-y-6">
+          <form onSubmit={handleRegister} className="space-y-5">
             <div className="form-group">
               <div className="relative">
                 <MdPerson
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/90"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
                   size={20}
                 />
                 <input
@@ -110,7 +113,7 @@ const Register = () => {
             <div className="form-group">
               <div className="relative">
                 <MdEmail
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/90"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
                   size={20}
                 />
                 <input
@@ -122,11 +125,11 @@ const Register = () => {
                 />
               </div>
             </div>
-            
+
             <div className="form-group">
               <div className="relative">
                 <MdPhoto
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/90"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
                   size={20}
                 />
                 <input
@@ -142,7 +145,7 @@ const Register = () => {
             <div className="form-group">
               <div className="relative">
                 <MdLock
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/90"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
                   size={20}
                 />
                 <input
@@ -155,7 +158,7 @@ const Register = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/60 hover:text-white transition-colors duration-200"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
                 >
                   {showPassword ? (
                     <MdVisibilityOff size={20} />
@@ -180,29 +183,32 @@ const Register = () => {
               )}
             </button>
           </form>
-          <div className="text-center mt-6 pt-4 border-t border-white/30">
-            <p className="text-white/80 text-sm">
+          <div className="flex justify-center text-sm my-2">
+            <p className="px-3 bg-white text-gray-500">Or continue with</p>
+          </div>
+
+          <div className="space-y-3">
+            <button
+              onClick={handleGoogleLogin}
+              className={btnClass}
+              disabled={isLoading}
+            >
+              <FcGoogle
+                size={24}
+                className="group-hover:scale-110 transition-transform duration-200"
+              />
+              Continue with Google
+            </button>
+          </div>
+          <div className="text-center mt-3 py-3 border-t border-gray-200">
+            <p className="text-gray-600 text-sm">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="text-white font-semibold hover:text-cyan-200 transition-colors duration-200 underline underline-offset-4"
+                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-200 underline underline-offset-4"
               >
                 Sign In
               </Link>
-            </p>
-          </div>
-        </div>
-        <div className="hidden md:flex md:w-1/2 p-12 flex-col items-center justify-center bg-gradient-to-br from-white/10 to-white/5 border-l border-white/10 overflow-hidden">
-          <div className="text-center relative z-10">
-            <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-              Start Your{" "}
-              <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
-                Adventure
-              </span>
-            </h1>
-            <p className="text-white/80 text-lg font-light leading-relaxed mb-8 max-w-md">
-              Join thousands of users who are already building amazing projects
-              with our platform.
             </p>
           </div>
         </div>
