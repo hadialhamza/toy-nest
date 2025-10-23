@@ -34,7 +34,7 @@ const ToyCard = ({ toy }) => {
         <img
           src={pictureURL}
           alt={toyName}
-          className="w-full h-48 object-cover"
+          className="w-full h-60 object-cover"
         />
         {/* Category Badge */}
         <div className="absolute top-2 left-2">

@@ -7,6 +7,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
 import ToyDetails from "../Pages/ToyDetails";
+import ForgetPassword from "../Pages/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/login",
@@ -32,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: '/forget-password',
+        element: <ForgetPassword/>
       },
       {
         path: "/toy/:id",

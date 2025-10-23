@@ -183,7 +183,7 @@ const Register = () => {
               )}
             </button>
           </form>
-          <div className="flex justify-center text-sm my-2">
+          <div className="flex justify-center text-sm my-3">
             <p className="px-3 bg-white text-gray-500">Or continue with</p>
           </div>
 

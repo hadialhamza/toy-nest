@@ -6,8 +6,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
-  const { setUser, emailLogin, googleLogin, forgetPassword } =
-    useContext(AuthContext);
+  const { setUser, emailLogin, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const emailRef = useRef(null);
@@ -53,18 +52,14 @@ const Login = () => {
 
   const handleForgetPassword = () => {
     const email = emailRef.current.value;
+
     if (!email) {
       toast.error("Please enter your email address first.");
       return;
     }
-    forgetPassword(email)
-      .then(() => {
-        toast.success("Password Reset Email Sent");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err.message);
-      });
+
+    // Redirect to forget password page with email
+    navigate("/forget-password", { state: { email: email } });
   };
 
   const inputClass =
@@ -155,7 +150,7 @@ const Login = () => {
             </button>
           </form>
 
-          <div className="flex justify-center text-sm my-2">
+          <div className="flex justify-center text-sm my-3">
             <p className="px-3 bg-white text-gray-500">Or continue with</p>
           </div>
 
