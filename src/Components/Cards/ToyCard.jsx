@@ -47,7 +47,7 @@ const ToyCard = ({ toy }) => {
       {/* Content */}
       <div className="p-4">
         {/* Toy Name */}
-        <h3 className="font-semibold text-lg text-gray-800 mb-2 line-clamp-2">
+        <h3 className="font-bold text-2xl text-gray-800 mb-2 line-clamp-2">
           {toyName}
         </h3>
 
@@ -58,9 +58,9 @@ const ToyCard = ({ toy }) => {
             <span className="text-sm text-gray-600 ml-1">{rating}</span>
           </div>
           <span
-            className={`text-xs font-medium px-2 py-1 rounded ${
+            className={`text-md font-medium px-3 py-1 rounded-md ${
               availableQuantity > 10
-                ? "bg-green-100 text-green-800"
+                ? "bg-green-200 text-green-800"
                 : availableQuantity > 0
                 ? "bg-orange-100 text-orange-800"
                 : "bg-red-100 text-red-800"
@@ -74,13 +74,13 @@ const ToyCard = ({ toy }) => {
 
         {/* Price */}
         <div className="flex items-center justify-between mb-4">
-          <span className="text-2xl font-bold text-gray-900">${price}</span>
+          <span className="text-xl font-semibold text-gray-900">${price}</span>
         </div>
 
         {/* View More Button */}
         <Link
           to={`/toy/${toyId}`}
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors duration-200 flex items-center justify-center gap-2"
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg font-medium p-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
         >
           <FaEye className="w-4 h-4" />
           View Details
