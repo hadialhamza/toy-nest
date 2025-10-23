@@ -96,27 +96,13 @@ const LoadingPage = () => {
           style={{ animationDelay: "2.5s" }}
         ></div>
       </div>
-      <style jsx>{`
-        .typing-dots span {
-          opacity: 0;
-          animation: typing 1.5s infinite;
-        }
-        .typing-dots span:nth-child(2) {
-          animation-delay: 0.5s;
-        }
-        .typing-dots span:nth-child(3) {
-          animation-delay: 1s;
-        }
-        @keyframes typing {
-          0%,
-          100% {
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-        }
-      `}</style>
+      <p className="text-lg text-gray-700 font-semibold inline-block">
+        <span className="typing-dots">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
+      </p>
     </div>
   );
 };

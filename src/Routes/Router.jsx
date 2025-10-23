@@ -8,11 +8,13 @@ import Register from "../Pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
 import ToyDetails from "../Pages/ToyDetails";
 import ForgetPassword from "../Pages/ForgetPassword";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -39,8 +41,8 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/forget-password',
-        element: <ForgetPassword/>
+        path: "/forget-password",
+        element: <ForgetPassword />,
       },
       {
         path: "/toy/:id",
