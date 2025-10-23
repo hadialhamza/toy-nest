@@ -17,7 +17,7 @@ const PopularToys = () => {
             </span>
           </h2>
           <div className="relative inline-block">
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
               Discover our most loved and trending toys that bring joy and
               creativity to children of all ages
             </p>
