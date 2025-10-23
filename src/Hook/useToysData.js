@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const useToysData = () => {
   const [toys, setToys] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const useToysData = () => {
       .then((data) => setToys(data.data))
       .catch((err) => setError(err))
       .finally(() => {
-        setTimeout(() => setLoading(false), 1000);
+        setTimeout(() => setLoading(false), 1500);
       });
   }, []);
 
