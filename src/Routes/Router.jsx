@@ -32,6 +32,7 @@ export const router = createBrowserRouter([
             <Profile />
           </ProtectedRoute>
         ),
+        errorElement: <ErrorPage />,
       },
       {
         path: "/login",

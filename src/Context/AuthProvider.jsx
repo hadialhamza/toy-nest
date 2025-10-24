@@ -18,10 +18,12 @@ const gitHubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setTimeout(() => setLoading(false), 1000);
     });
     return () => {
       unsubscribe();
@@ -65,11 +67,11 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  
-
   const authInfo = {
     user,
     setUser,
+    loading,
+    setLoading,
     createUser,
     profileUpdate,
     verifyEmail,

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
-  const { setUser, emailLogin, googleLogin } = useContext(AuthContext);
+  const { setUser, setLoading, emailLogin, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const emailRef = useRef(null);
@@ -17,6 +17,7 @@ const Login = () => {
     const email = event.target.email?.value;
     const password = event.target.password?.value;
     setIsLoading(true);
+    setLoading(true);
 
     emailLogin(email, password)
       .then((res) => {
@@ -30,11 +31,13 @@ const Login = () => {
       })
       .finally(() => {
         setIsLoading(false);
+        setLoading(false);
       });
   };
 
   const handleGoogleLogin = () => {
     setIsLoading(true);
+    setLoading(true);
     googleLogin()
       .then((res) => {
         toast.success("Logged In Successfully");
@@ -47,6 +50,7 @@ const Login = () => {
       })
       .finally(() => {
         setIsLoading(false);
+        setLoading(false);
       });
   };
 

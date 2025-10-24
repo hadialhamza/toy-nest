@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa";
 import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, loading, logout } = useContext(AuthContext);
 
   return (
     <div className="bg-base-200 shadow-xl sticky top-0 z-50 px-4 py-1">
@@ -40,7 +40,12 @@ const Navbar = () => {
           <NavLinks />
         </div>
         <div className="navbar-end">
-          {user ? (
+          {loading ? (
+            <div className="flex items-center gap-4">
+              <div className="skeleton w-12 h-12 rounded-full"></div>
+              <div className="hidden lg:block skeleton w-34 h-12 rounded-lg"></div>
+            </div>
+          ) : user ? (
             <div className="flex items-center gap-4">
               <div
                 className="tooltip tooltip-bottom"
@@ -62,7 +67,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="my-btn-primary flex items-center gap-2 !py-2 sm:!py-3"
+              className="my-btn flex items-center gap-2 !py-2 sm:!py-3"
             >
               <IoMdLogIn className="hidden sm:block text-2xl" /> Login
             </Link>

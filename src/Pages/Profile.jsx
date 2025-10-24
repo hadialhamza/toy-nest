@@ -1,20 +1,14 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { MdPerson, MdEmail, MdPhoto, MdCalendarToday } from "react-icons/md";
+import LoadingPage from "./LoadingPage";
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const [showForm, setShowForm] = useState(false);
 
-  if (!user) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-400 via-red-500 to-orange-600">
-        <div className="text-white text-center">
-          <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
-          <p>Loading profile...</p>
-        </div>
-      </div>
-    );
+  if (loading) {
+    return <LoadingPage />;
   }
 
   return (
