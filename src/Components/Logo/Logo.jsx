@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <div className="flex items-center gap-2">
       <img className="w-15 hidden sm:block md:w-20" src={logo} alt="Logo" />
-      <h2 className="text-2xl md:text-3xl font-bold">
+      <h2 className="text-2xl md:text-3xl font-bold font-logo">
         <span className="text-blue-500">T</span>
         <span className="text-green-500">o</span>
         <span className="text-yellow-500">y</span>

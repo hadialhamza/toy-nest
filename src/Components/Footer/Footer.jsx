@@ -56,12 +56,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/allToys"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Shop All Toys
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -136,18 +136,18 @@ const Footer = () => {
               © {new Date().getFullYear()} ToyNest. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a
-                href="#"
+              <Link
+                to="/terms"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 Terms and Conditions
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/privacy"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
               <div className="flex space-x-4">
                 <a
                   target="_blank"

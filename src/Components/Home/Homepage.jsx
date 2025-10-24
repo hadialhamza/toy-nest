@@ -3,6 +3,8 @@ import Header from "./Header";
 import PopularToys from "./PopularToys";
 import useToysData from "../../Hook/useToysData";
 import LoadingPage from "../../Pages/LoadingPage";
+import Sellers from "./Sellers";
+import Categories from "./Categories";
 
 const Homepage = () => {
   const { loading } = useToysData();
@@ -11,6 +13,8 @@ const Homepage = () => {
     <div>
       <Header />
       <PopularToys />
+      <Sellers />
+      <Categories />
     </div>
   );
 };
