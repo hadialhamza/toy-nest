@@ -18,8 +18,8 @@ const NavLinks = () => {
     },
     {
       id: 2,
-      name: "About",
-      path: "/about",
+      name: "All Toys",
+      path: "/allToys",
       icon: <FaInfoCircle />,
     },
   ];

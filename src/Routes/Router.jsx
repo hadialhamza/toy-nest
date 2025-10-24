@@ -9,6 +9,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import ToyDetails from "../Pages/ToyDetails";
 import ForgetPassword from "../Pages/ForgetPassword";
 import ErrorPage from "../Pages/ErrorPage";
+import AllToys from "../Pages/AllToys";
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +22,8 @@ export const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "/about",
-        element: <AboutUs />,
+        path: "/allToys",
+        element: <AllToys />,
       },
       {
         path: "/profile",

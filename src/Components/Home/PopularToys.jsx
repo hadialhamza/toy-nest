@@ -2,6 +2,7 @@ import React from "react";
 import ToyCard from "../Cards/ToyCard";
 import useToysData from "../../Hook/useToysData";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router";
 
 const PopularToys = () => {
   const { toys } = useToysData();
@@ -30,12 +31,15 @@ const PopularToys = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-          <button className="group px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-103 shadow-lg hover:shadow-xl overflow-hidden">
+          <Link
+            to="/allToys"
+            className="btn group px-10 py-7 my-btn border-none"
+          >
             <span className="flex items-center gap-2">
               View All Toys
               <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
