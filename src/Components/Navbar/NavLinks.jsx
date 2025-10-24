@@ -1,3 +1,9 @@
+import {
+  BlocksIcon,
+  GraduationCap,
+  HomeIcon,
+  UserRoundCheck,
+} from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router";
 
@@ -7,29 +13,33 @@ const NavLinks = () => {
       id: 1,
       name: "Home",
       path: "/",
+      icon: <HomeIcon size={16} />,
     },
     {
       id: 2,
       name: "All Products",
       path: "/allToys",
+      icon: <BlocksIcon size={16} />,
     },
     {
       id: 3,
       name: "Profile",
       path: "/profile",
+      icon: <UserRoundCheck size={16} />,
     },
     {
       id: 4,
       name: "Learn",
       path: "/learning",
+      icon: <GraduationCap size={20} />,
     },
   ];
 
   const activeLink = ({ isActive }) =>
-    `flex items-center gap-2 transition-colors duration-200 text-lg ${
+    `flex items-center gap-1 transition-colors duration-200 text-lg ${
       isActive
-        ? "text-blue-700 font-bold bg-blue-200 px-3 rounded-md"
-        : "text-base-content/80 hover:text-base-content"
+        ? "text-blue-700 font-bold border-b-2 border-blue-700"
+        : "text-base-content/80 hover:text-base-content hover:border-b-2 "
     }`;
 
   return (
@@ -37,6 +47,7 @@ const NavLinks = () => {
       {navLinks.map((link) => (
         <li key={link.id}>
           <NavLink to={link.path} className={activeLink}>
+            {link.icon}
             {link.name}
           </NavLink>
         </li>

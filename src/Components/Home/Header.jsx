@@ -16,7 +16,7 @@ const Header = () => {
       description:
         "Explore our curated collection of toys that inspire creativity and bring endless fun to every playtime.",
       buttonText: "Shop All Toys",
-      buttonLink: "/toys",
+      buttonLink: "/allToys",
       overlay: "from-blue-600/70 to-purple-700/70",
     },
     {
