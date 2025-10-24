@@ -12,6 +12,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import AllToys from "../Pages/AllToys";
 import TermsAndConditions from "../Pages/TermsAndConditions";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import LearningCenter from "../Pages/LearningCenter";
 
 export const router = createBrowserRouter([
   {
@@ -28,14 +29,6 @@ export const router = createBrowserRouter([
         element: <AllToys />,
       },
       {
-        path: "/profile",
-        element: (
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        ),
-      },
-      {
         path: "/login",
         element: <Login />,
       },
@@ -48,6 +41,14 @@ export const router = createBrowserRouter([
         element: <ForgetPassword />,
       },
       {
+        path: "/terms",
+        element: <TermsAndConditions />,
+      },
+      {
+        path: "/privacy",
+        element: <PrivacyPolicy />,
+      },
+      {
         path: "/toy/:id",
         element: (
           <ProtectedRoute>
@@ -56,12 +57,20 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/terms",
-        element: <TermsAndConditions />,
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: "/privacy",
-        element: <PrivacyPolicy />,
+        path: "/learning",
+        element: (
+          <ProtectedRoute>
+            <LearningCenter />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

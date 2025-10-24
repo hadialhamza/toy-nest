@@ -10,11 +10,11 @@ const Homepage = () => {
   const { loading } = useToysData();
   if (loading) return <LoadingPage />;
   return (
-    <div>
+    <div className="bg-base-200">
       <Header />
       <PopularToys />
-      <Sellers />
       <Categories />
+      <Sellers />
     </div>
   );
 };
