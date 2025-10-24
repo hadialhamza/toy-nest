@@ -1,8 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
 
 body {
   scroll-behavior: smooth;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.font-baloo {
+  font-family: "Baloo 2", sans-serif;
+}
+
+.font-Nunito {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-700;
+}
+
+.subtitle {
+  @apply text-lg md:text-xl text-gray-500 max-w-3xl mx-auto font-medium;
 }
 
 .my-btn {
@@ -24,4 +44,14 @@ body {
 }
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
 }
