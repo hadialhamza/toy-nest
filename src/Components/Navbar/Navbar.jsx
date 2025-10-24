@@ -4,7 +4,8 @@ import NavLinks from "./NavLinks";
 import { AuthContext } from "../../Context/AuthContext";
 import { Link } from "react-router";
 import { FaBars } from "react-icons/fa";
-import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
+import { IoIosLogOut, IoMdLogIn, IoMdLogOut } from "react-icons/io";
+import { HiLogin, HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 
 const Navbar = () => {
   const { user, loading, logout } = useContext(AuthContext);
@@ -46,30 +47,32 @@ const Navbar = () => {
               <div className="hidden lg:block skeleton w-34 h-12 rounded-lg"></div>
             </div>
           ) : user ? (
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-8">
               <div
                 className="tooltip tooltip-bottom"
                 data-tip={user.displayName}
               >
                 <img
                   src={user.photoURL}
-                  alt={user.displayName}
+                  alt=""
                   className="w-12 h-12 object-cover rounded-full ring-2 ring-primary ring-offset-base-100 ring-offset-2"
                 />
               </div>
               <button
                 onClick={logout}
-                className="my-btn-primary lg:flex items-center gap-2 hidden"
+                className="group my-btn py-3 px-6 lg:flex items-center gap-2 hidden"
               >
-                <IoMdLogOut className="text-2xl" /> Logout
+                Logout
+                <HiOutlineLogout className="text-2xl group-hover:translate-x-1 duration-300" />
               </button>
             </div>
           ) : (
             <Link
               to="/login"
-              className="my-btn flex items-center gap-2 !py-2 sm:!py-3"
+              className="group my-btn flex items-center gap-2 py-3 px-6"
             >
-              <IoMdLogIn className="hidden sm:block text-2xl" /> Login
+              Login
+              <HiOutlineLogin className="hidden sm:block text-2xl group-hover:-translate-x-1 duration-300" />{" "}
             </Link>
           )}
         </div>

@@ -21,8 +21,9 @@ const AllToys = () => {
           </h2>
           <div className="relative inline-block">
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
-              Discover our most loved and trending toys that bring joy and
-              creativity to children of all ages
+              Explore our entire toy universe! Find everything from building
+              blocks to creative arts, all sourced from amazing local sellers.
+              Quality toys, happy kids!
             </p>
             <div className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
           </div>
