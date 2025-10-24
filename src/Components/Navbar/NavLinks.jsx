@@ -1,5 +1,4 @@
 import React from "react";
-import { FaHome, FaInfoCircle, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router";
 
 const NavLinks = () => {
@@ -8,26 +7,28 @@ const NavLinks = () => {
       id: 1,
       name: "Home",
       path: "/",
-      icon: <FaHome />,
+    },
+    {
+      id: 2,
+      name: "All Products",
+      path: "/allToys",
     },
     {
       id: 3,
       name: "Profile",
       path: "/profile",
-      icon: <FaUser />,
     },
     {
-      id: 2,
-      name: "All Toys",
-      path: "/allToys",
-      icon: <FaInfoCircle />,
+      id: 4,
+      name: "Learn",
+      path: "/learning",
     },
   ];
 
   const activeLink = ({ isActive }) =>
     `flex items-center gap-2 transition-colors duration-200 text-lg ${
       isActive
-        ? "text-blue-500 font-bold underline"
+        ? "text-blue-700 font-bold bg-blue-200 px-3 rounded-md"
         : "text-base-content/80 hover:text-base-content"
     }`;
 
@@ -36,7 +37,6 @@ const NavLinks = () => {
       {navLinks.map((link) => (
         <li key={link.id}>
           <NavLink to={link.path} className={activeLink}>
-            {link.icon}
             {link.name}
           </NavLink>
         </li>

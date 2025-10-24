@@ -4,8 +4,7 @@ import NavLinks from "./NavLinks";
 import { AuthContext } from "../../Context/AuthContext";
 import { Link } from "react-router";
 import { FaBars } from "react-icons/fa";
-import { IoIosLogOut, IoMdLogIn, IoMdLogOut } from "react-icons/io";
-import { HiLogin, HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
+import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 
 const Navbar = () => {
   const { user, loading, logout } = useContext(AuthContext);
@@ -15,8 +14,8 @@ const Navbar = () => {
       <div className="w-11/12 mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="lg:hidden">
-              <FaBars className="h-5 w-5 mr-5" />
+            <label tabIndex={0} className="lg:hidden btn btn-ghost mr-2">
+              <FaBars className="h-5 w-5" />
             </label>
             <div
               tabIndex={0}
@@ -26,9 +25,9 @@ const Navbar = () => {
               {user && (
                 <button
                   onClick={logout}
-                  className="my-btn-primary mt-2 flex items-center justify-center gap-2"
+                  className="my-btn py-3 mt-2 flex items-center justify-center gap-2"
                 >
-                  <IoMdLogOut className="text-2xl" /> Logout
+                  <HiOutlineLogout className="text-2xl" /> Logout
                 </button>
               )}
             </div>

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
 import Homepage from "../Components/Home/Homepage";
-import AboutUs from "../Pages/AboutUs";
+import AboutMe from "../Pages/AboutMe";
 import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
@@ -47,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "/privacy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/about",
+        element: <AboutMe />,
       },
       {
         path: "/toy/:id",
