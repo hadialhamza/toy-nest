@@ -5,14 +5,23 @@ body {
   scroll-behavior: smooth;
 }
 
-/* .my-btn {
-  @apply bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0 shadow-md transition-all duration-300 transform hover:scale-[1.02];
-} */
-
 .my-btn {
   @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-103 shadow-lg hover:shadow-xl overflow-hidden;
 }
 
 .my-btn-primary {
   @apply cursor-pointer bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-102 shadow-lg active:scale-100 active:duration-100 active:ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
