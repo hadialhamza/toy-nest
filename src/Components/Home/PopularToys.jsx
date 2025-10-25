@@ -20,7 +20,7 @@ const PopularToys = () => {
             <div className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-4 md:gap-6 lg:gap-7">
           {toys.slice(0, 8).map((toy) => (
             <ToyCard key={toy.toyId} toy={toy} />
           ))}

@@ -12,7 +12,7 @@ const useToysData = () => {
       .then((data) => setToys(data.data))
       .catch((err) => setError(err))
       .finally(() => {
-        setTimeout(() => setLoading(false), 1000);
+        setTimeout(() => setLoading(false), 500);
       });
   }, []);
 
