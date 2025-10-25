@@ -82,10 +82,8 @@ const LearningCenter = () => {
     <div className="min-h-screen bg-base-200 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            Learning Through Play
-          </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h1 className="title font-baloo">Learning Through Play</h1>
+          <p className="subtitle">
             Discover how playtime builds essential skills for your child's
             development
           </p>
@@ -100,7 +98,9 @@ const LearningCenter = () => {
               <div className="flex items-center gap-4 mb-4">
                 {t.icon}
                 <div>
-                  <h3 className="font-bold text-gray-800">{t.title}</h3>
+                  <h3 className="font-baloo text-lg font-semibold text-gray-800">
+                    {t.title}
+                  </h3>
                   <div className="flex gap-2 text-xs text-gray-500">
                     <span>{t.age}</span>
                     <span>•</span>
@@ -115,7 +115,7 @@ const LearningCenter = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
+            <h2 className="font-baloo text-2xl font-bold text-gray-800 mb-4">
               Quick Tips for Parents
             </h2>
             <ul className="space-y-3">
@@ -132,7 +132,7 @@ const LearningCenter = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
+            <h2 className="font-baloo text-2xl font-bold text-gray-800 mb-4">
               Play-Based Learning Benefits
             </h2>
             <div className="space-y-4">
