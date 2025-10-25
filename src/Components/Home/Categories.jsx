@@ -1,42 +1,79 @@
 import React from "react";
 import { Link } from "react-router";
-import { FaPuzzlePiece, FaCubes, FaRobot, FaHeart } from "react-icons/fa";
+import {
+  FaPuzzlePiece,
+  FaCubes,
+  FaGraduationCap,
+  FaHeart,
+  FaFlask,
+  FaPaintBrush,
+  FaCar,
+  FaHome,
+} from "react-icons/fa";
 
-// Data for the categories
 const categories = [
   {
     name: "Building Blocks",
-    icon: <FaCubes className="w-12 h-12" />,
-    color: "bg-blue-100 text-blue-600",
-    link: "/category/building-blocks",
+    link: "/toys/building-blocks",
+    icon: <FaCubes size={48} className="text-white" />,
+    color: "bg-green-500",
   },
   {
     name: "Educational Toys",
-    icon: <FaRobot className="w-12 h-12" />,
-    color: "bg-green-100 text-green-600",
-    link: "/category/educational-toys",
+    link: "/toys/educational-toys",
+    icon: <FaGraduationCap size={48} className="text-white" />,
+    color: "bg-blue-500",
   },
   {
-    name: "Plush Toys",
-    icon: <FaHeart className="w-12 h-12" />,
-    color: "bg-pink-100 text-pink-600",
-    link: "/category/plush-toys",
+    name: "Stuffed Animals",
+    link: "/toys/stuffed-animals",
+    icon: <FaHeart size={48} className="text-white" />,
+    color: "bg-pink-500",
+  },
+  {
+    name: "STEM Toys",
+    link: "/toys/stem-toys",
+    icon: <FaFlask size={48} className="text-white" />,
+    color: "bg-purple-500",
+  },
+  {
+    name: "Arts & Crafts",
+    link: "/toys/arts-crafts",
+    icon: <FaPaintBrush size={48} className="text-white" />,
+    color: "bg-yellow-500",
+  },
+  {
+    name: "Remote Control",
+    link: "/toys/remote-control",
+    icon: <FaCar size={48} className="text-white" />,
+    color: "bg-red-500",
+  },
+  {
+    name: "Dollhouses",
+    link: "/toys/dollhouses",
+    icon: <FaHome size={48} className="text-white" />,
+    color: "bg-rose-500",
   },
   {
     name: "Puzzles",
-    icon: <FaPuzzlePiece className="w-12 h-12" />,
-    color: "bg-yellow-100 text-yellow-600",
-    link: "/category/puzzles",
+    link: "/toys/puzzles",
+    icon: <FaPuzzlePiece size={48} className="text-white" />,
+    color: "bg-cyan-500",
   },
 ];
 
 const Categories = () => {
   return (
-    <div className="py-16 bg-base-200">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold font-nunito text-center mb-12">
-          Shop by Category
-        </h2>
+    <div className="bg-base-200 mt-5">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="text-center mb-10">
+          <h2 className="title font-baloo text-4xl font-bold">
+            Shop by Category
+          </h2>
+          <p className="text-lg text-gray-600 mt-2">
+            Find the perfect toy for every interest
+          </p>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {categories.map((category) => (
             <Link

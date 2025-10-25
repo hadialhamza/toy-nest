@@ -3,7 +3,7 @@ import Header from "./Header";
 import PopularToys from "./PopularToys";
 import useToysData from "../../Hook/useToysData";
 import LoadingPage from "../../Pages/LoadingPage";
-import Sellers from "./Sellers";
+import Sellers from "./ImageGallery";
 import Categories from "./Categories";
 
 const Homepage = () => {

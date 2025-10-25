@@ -16,7 +16,7 @@ const Slider = (slide) => {
       <div className="relative h-full flex items-center">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 font-baloo">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-baloo">
               {slide.title}
               <span className="block text-yellow-300 mt-2">
                 {slide.subtitle}

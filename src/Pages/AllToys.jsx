@@ -13,14 +13,9 @@ const AllToys = () => {
     <div className="bg-gray-100 min-h-screen">
       <div className="w-11/12 mx-auto py-10 md:py-15 lg:py-20">
         <div className="text-center mb-16 md:mb-20 relative">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-25 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-              All Toys
-            </span>
-          </h2>
+          <h2 className="title font-baloo">All Toys</h2>
           <div className="relative inline-block">
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+            <p className="subtitle">
               Explore our entire toy universe! Find everything from building
               blocks to creative arts, all sourced from amazing local sellers.
               Quality toys, happy kids!

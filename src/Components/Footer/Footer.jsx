@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-400">
+            <h4 className="text-xl font-semibold mb-4 text-amber-400 font-baloo">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -66,7 +66,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-400">
+            <h4 className="text-xl font-baloo font-semibold mb-4 text-amber-400">
               Support
             </h4>
             <ul className="space-y-2">
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-400">
+            <h4 className="text-xl font-baloo font-semibold mb-4 text-amber-400">
               Contact Us
             </h4>
             <div className="space-y-3">

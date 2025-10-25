@@ -1,73 +1,103 @@
-// src/pages/ToyDetails.jsx
 import { useParams } from "react-router";
-import { FaStar } from "react-icons/fa"; // Using react-icons
+import { FaStar, FaUser, FaEnvelope, FaTag } from "react-icons/fa";
 import useToysData from "../Hook/useToysData";
 import TryNowForm from "../Components/Form/TryNowForm";
+import LoadingPage from "./LoadingPage";
+import ErrorPage from "./ErrorPage";
 
 const ToyDetails = () => {
-  const { id } = useParams(); // Get the ID from the URL
+  const { id } = useParams();
   const { toys, loading, error } = useToysData();
   const toy = toys.find((toy) => toy.toyId === parseInt(id));
 
   if (loading) {
-    return <div className="text-center py-20">Loading toy details...</div>;
+    return <LoadingPage />;
   }
 
   if (error) {
-    return <div className="text-center py-20 text-red-500">{error}</div>;
+    return <ErrorPage />;
   }
 
   if (!toy) {
-    return <div className="text-center py-20">Toy not found.</div>;
+    return (
+      <div className="text-center py-20 text-3xl font-baloo">
+        Toy not found.
+      </div>
+    );
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Toy Image */}
-        <div>
-          <img
-            src={toy.pictureURL}
-            alt={toy.name}
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
-          />
-        </div>
-
-        {/* Toy Info & Form */}
-        <div className="space-y-6">
-          <h1 className="text-4xl font-bold">{toy.toyName}</h1>
-          <p className="text-gray-600">{toy.description}</p>
-
-          <div className="flex items-center space-x-4">
-            <span className="text-3xl font-semibold text-blue-600">
-              ${toy.price}
-            </span>
-            <div className="flex items-center text-yellow-400">
-              <FaStar />
-              <span className="ml-1 text-gray-700">{toy.rating}</span>
+    <div className="min-h-screen bg-base-200 py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="p-8 flex items-center justify-center">
+              <img
+                src={toy.pictureURL}
+                alt=""
+                className="w-full max-w-md object-cover rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+              />
             </div>
-            <span className="text-gray-500">
-              ({toy.availableQuantity} in stock)
-            </span>
-          </div>
 
-          <div className="text-sm">
-            <p>
-              <strong>Seller:</strong> {toy.sellerName}
-            </p>
-            <p>
-              <strong>Seller Email:</strong> {toy.sellerEmail}
-            </p>
-            <p>
-              <strong>Category:</strong> {toy.subCategory}
-            </p>
-          </div>
+            <div className="p-8 lg:p-10">
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-4xl font-baloo lg:text-5xl font-bold text-gray-700 mb-4">
+                    {toy.toyName}
+                  </h1>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {toy.description}
+                  </p>
+                </div>
 
-          {/* Requirement 8.d: "Try Now" Form */}
-          <div className="pt-6 border-t">
-            <h2 className="text-2xl font-semibold mb-4">Want to try it out?</h2>
-            <TryNowForm toyName={toy.name} />
+                <div className="flex items-center space-x-6">
+                  <span className="text-4xl font-baloo font-bold text-blue-600">
+                    ${toy.price}
+                  </span>
+                  <div className="flex items-center bg-yellow-50 px-4 py-2 rounded-full">
+                    <FaStar className="text-xl text-yellow-400" />
+                    <span className="ml-2 text-gray-800 font-semibold">
+                      {toy.rating}
+                    </span>
+                  </div>
+                  <span className="px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800">
+                    In stock
+                  </span>
+                </div>
+
+                <div className="space-y-3 bg-gray-50 p-6 rounded-2xl">
+                  <div className="flex items-center space-x-3">
+                    <FaUser className="text-red-500" />
+                    <div>
+                      <strong className="text-gray-900">Seller:</strong>
+                      <span className="ml-2 text-gray-600">
+                        {toy.sellerName}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <FaEnvelope className="text-green-500" />
+                    <div>
+                      <strong className="text-gray-900">Seller Email:</strong>
+                      <span className="ml-2 text-gray-600">
+                        {toy.sellerEmail}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <FaTag className="text-yellow-400" />
+                    <div>
+                      <strong className="text-gray-900">Category:</strong>
+                      <span className="ml-2 text-gray-600">
+                        {toy.subCategory}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <TryNowForm toyName={toy.toyName} />
         </div>
       </div>
     </div>

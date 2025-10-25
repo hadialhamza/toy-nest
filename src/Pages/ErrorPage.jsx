@@ -10,7 +10,9 @@ const ErrorPage = () => {
         <div className="relative mb-8">
           <div className="w-64 h-64 mx-auto relative">
             <div className="absolute inset-0 bg-white rounded-full shadow-2xl flex items-center justify-center">
-              <div className="text-6xl font-bold text-gray-300">404</div>
+              <div className="font-baloo text-6xl font-bold text-gray-500">
+                404
+              </div>
             </div>
 
             <div className="absolute -top-4 -left-4 w-16 h-16 bg-blue-500 rounded-2xl rotate-12 animate-float shadow-lg">
@@ -42,13 +44,13 @@ const ErrorPage = () => {
         </div>
 
         <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4 font-baloo">
             Oops! <span className="text-blue-600">Lost</span> in{" "}
             <span className="text-amber-600">Toy</span>
             <span className="text-green-600"> land!</span>
           </h1>
 
-          <p className="text-xl text-gray-600 mb-6 max-w-md mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 mb-6 max-w-md mx-auto leading-relaxed subtitle">
             It seems this toy has wandered off from the nest! Don't worry, we'll
             help you find your way back to the fun.
           </p>
@@ -64,7 +66,7 @@ const ErrorPage = () => {
           </Link>
 
           <Link
-            to="/toys"
+            to="/allToys"
             className="group bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-3"
           >
             <MdToys className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -73,19 +75,11 @@ const ErrorPage = () => {
 
           <button
             onClick={() => window.history.back()}
-            className="group border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+            className="group border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700 font-semibold py-[14px] px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
           >
             <FaArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Go Back
           </button>
-        </div>
-
-        <div className="mt-6 pt-3 border-t border-gray-300">
-          <h2 className="text-2xl font-bold mb-2">
-            <span className="text-amber-600">Toy</span>
-            <span className="text-blue-600">Nest</span>
-          </h2>
-          <p className="text-gray-500">Where play finds a home</p>
         </div>
       </div>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
