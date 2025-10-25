@@ -4,7 +4,6 @@ const TermsAndConditions = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4 max-w-4xl">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             Terms & Conditions
@@ -15,7 +14,6 @@ const TermsAndConditions = () => {
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg p-8">
-          {/* Introduction */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Welcome to ToyNest
@@ -27,7 +25,6 @@ const TermsAndConditions = () => {
             </p>
           </section>
 
-          {/* Account Terms */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               1. Account Registration
@@ -40,7 +37,6 @@ const TermsAndConditions = () => {
             </ul>
           </section>
 
-          {/* Purchases & Payments */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               2. Purchases & Payments
@@ -58,7 +54,6 @@ const TermsAndConditions = () => {
             </ul>
           </section>
 
-          {/* Shipping & Delivery */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               3. Shipping & Delivery
@@ -71,7 +66,6 @@ const TermsAndConditions = () => {
             </ul>
           </section>
 
-          {/* Returns & Refunds */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               4. Returns & Refunds
@@ -86,7 +80,6 @@ const TermsAndConditions = () => {
             </ul>
           </section>
 
-          {/* User Conduct */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               5. User Conduct
@@ -101,7 +94,6 @@ const TermsAndConditions = () => {
             </ul>
           </section>
 
-          {/* Intellectual Property */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               6. Intellectual Property
@@ -114,7 +106,6 @@ const TermsAndConditions = () => {
             </p>
           </section>
 
-          {/* Limitation of Liability */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               7. Limitation of Liability
@@ -127,7 +118,6 @@ const TermsAndConditions = () => {
             </p>
           </section>
 
-          {/* Changes to Terms */}
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               8. Changes to Terms
@@ -139,7 +129,6 @@ const TermsAndConditions = () => {
             </p>
           </section>
 
-          {/* Contact */}
           <section>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               9. Contact Information

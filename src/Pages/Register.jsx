@@ -88,7 +88,7 @@ const Register = () => {
       <div className="w-full max-w-md rounded-2xl shadow-xl overflow-hidden bg-white">
         <div className="w-full p-8">
           <div className="text-center mb-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="font-baloo text-xl sm:text-2xl md:text-3xl font-bold text-gray-700 mb-2">
               Register your Account
             </h2>
           </div>

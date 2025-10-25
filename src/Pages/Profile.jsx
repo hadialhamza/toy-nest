@@ -2,192 +2,201 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { MdPerson, MdEmail, MdPhoto, MdCalendarToday } from "react-icons/md";
 import LoadingPage from "./LoadingPage";
+import Swal from "sweetalert2";
 
 const Profile = () => {
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading, profileUpdate } = useContext(AuthContext);
   const [showForm, setShowForm] = useState(false);
 
   if (loading) {
     return <LoadingPage />;
   }
 
+  const handleProfile = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.displayName.value;
+    const photo = form.photoURL.value;
+
+    const updatedInfo = {
+      displayName: name,
+      photoURL: photo,
+    };
+
+    profileUpdate(updatedInfo)
+      .then(() => {
+        Swal.fire({
+          title: "Profile updated successfully",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: error.message || "Failed to update profile",
+          icon: "error",
+        });
+      })
+      .finally(() => {
+        setShowForm(false);
+      });
+  };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-400 via-red-500 to-orange-600 py-8 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-base-200 py-15 px-4">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">My Profile</h1>
-          <p className="text-orange-100">Your account information</p>
+          <h1 className="font-baloo text-5xl font-bold text-gray-700 mb-2">
+            My Profile
+          </h1>
+          <p className="text-gray-600 text-lg">Your account information</p>
         </div>
 
-        {/* Main Container */}
-        <div className="flex justify-center">
-          <div className="flex rounded-2xl shadow-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-500">
-            {/* Profile Section - Always on left */}
-            <div
-              className={`transition-all duration-500 ${
-                showForm ? "w-1/2" : "w-full max-w-md"
-              }`}
-            >
-              <div className="p-8">
-                {/* Profile Picture */}
-                <div className="flex justify-center mb-6">
-                  <img
-                    src={
-                      user.photoURL ||
-                      `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                        user.displayName || user.email
-                      )}&background=fdba74&color=fff`
-                    }
-                    alt="Profile"
-                    className="w-24 h-24 rounded-full border-4 border-white/20 shadow-lg"
-                  />
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            <div className={`p-8 ${showForm ? "lg:w-1/2" : "w-full"}`}>
+              <div className="flex justify-center mb-6">
+                <img
+                  src={
+                    user.photoURL ||
+                    `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                      user.displayName || user.email
+                    )}&background=4f46e5&color=fff`
+                  }
+                  alt="Profile"
+                  className="w-30 h-30 rounded-full border-4 border-blue-500 shadow-lg"
+                />
+              </div>
+
+              <div className="flex justify-center mb-6">
+                <button
+                  onClick={() => setShowForm(!showForm)}
+                  className="my-btn py-2 px-6 cursor-pointer transition-colors"
+                >
+                  {showForm ? "Cancel" : "Edit Profile"}
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <MdPerson className="text-blue-600" size={25} />
+                    <span className="text-gray-700 font-semibold">Name</span>
+                  </div>
+                  <p className="text-gray-900 text-lg font-semibold">
+                    {user.displayName || "Not set"}
+                  </p>
                 </div>
 
-                {/* Edit Button */}
-                <div className="flex justify-center mb-6">
-                  <button
-                    onClick={() => setShowForm(!showForm)}
-                    className="py-2 px-6 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300"
-                  >
-                    {showForm ? "Cancel" : "Edit Profile"}
-                  </button>
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <MdEmail className="text-red-600" size={23} />
+                    <span className="text-gray-700 font-semibold">Email</span>
+                  </div>
+                  <p className="text-gray-900 text-lg font-semibold">
+                    {user.email}
+                  </p>
                 </div>
 
-                {/* User Information */}
-                <div className="space-y-4">
-                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="flex items-center gap-3 mb-2">
-                      <MdPerson className="text-orange-300" size={20} />
-                      <span className="text-orange-200 font-semibold">
-                        Name
-                      </span>
-                    </div>
-                    <p className="text-white text-lg font-semibold">
-                      {user.displayName || "Not set"}
-                    </p>
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <MdPhoto className="text-green-600" size={25} />
+                    <span className="text-gray-700 font-semibold">
+                      Photo URL
+                    </span>
                   </div>
-
-                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="flex items-center gap-3 mb-2">
-                      <MdEmail className="text-orange-300" size={20} />
-                      <span className="text-orange-200 font-semibold">
-                        Email
-                      </span>
-                    </div>
-                    <p className="text-white text-lg font-semibold">
-                      {user.email}
-                    </p>
-                  </div>
-
-                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="flex items-center gap-3 mb-2">
-                      <MdPhoto className="text-orange-300" size={20} />
-                      <span className="text-orange-200 font-semibold">
-                        Photo URL
-                      </span>
-                    </div>
-                    <p className="text-white text-sm break-all">
-                      {user.photoURL || "No profile photo set"}
-                    </p>
-                  </div>
-
-                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="flex items-center gap-3 mb-2">
-                      <MdCalendarToday className="text-orange-300" size={20} />
-                      <span className="text-orange-200 font-semibold">
-                        Status
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`w-3 h-3 rounded-full ${
-                          user.emailVerified ? "bg-green-500" : "bg-red-500"
-                        }`}
-                      ></div>
-                      <span className="text-white">
-                        {user.emailVerified
-                          ? "Email Verified"
-                          : "Email Not Verified"}
-                      </span>
-                    </div>
-                  </div>
+                  <p className="text-gray-600 text-sm break-all">
+                    {user.photoURL || "No profile photo set"}
+                  </p>
                 </div>
 
-                {/* Account Metadata */}
-                <div className="mt-6 pt-6 border-t border-white/20">
-                  <h3 className="text-white font-semibold mb-3 text-center">
-                    Account Details
-                  </h3>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
-                    <div className="bg-white/5 rounded-lg p-3 text-center">
-                      <p className="text-orange-200">Created</p>
-                      <p className="text-white font-semibold">
-                        {user.metadata?.creationTime
-                          ? new Date(
-                              user.metadata.creationTime
-                            ).toLocaleDateString()
-                          : "N/A"}
-                      </p>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 text-center">
-                      <p className="text-orange-200">Last Login</p>
-                      <p className="text-white font-semibold">
-                        {user.metadata?.lastSignInTime
-                          ? new Date(
-                              user.metadata.lastSignInTime
-                            ).toLocaleDateString()
-                          : "N/A"}
-                      </p>
-                    </div>
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <div className="flex items-center gap-3 mb-2">
+                    <MdCalendarToday className="text-yellow-500" size={22} />
+                    <span className="text-gray-700 font-semibold">Status</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-3 h-3 rounded-full ${
+                        user.emailVerified ? "bg-green-500" : "bg-red-500"
+                      }`}
+                    ></div>
+                    <span className="text-gray-700">
+                      {user.emailVerified
+                        ? "Email Verified"
+                        : "Email Not Verified"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <h3 className="text-gray-800 font-semibold mb-3 text-center">
+                  Account Details
+                </h3>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="bg-gray-50 rounded-lg p-3 text-center">
+                    <p className="text-gray-600">Created</p>
+                    <p className="text-gray-900 font-semibold">
+                      {user.metadata?.creationTime
+                        ? new Date(
+                            user.metadata.creationTime
+                          ).toLocaleDateString()
+                        : "N/A"}
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3 text-center">
+                    <p className="text-gray-600">Last Login</p>
+                    <p className="text-gray-900 font-semibold">
+                      {user.metadata?.lastSignInTime
+                        ? new Date(
+                            user.metadata.lastSignInTime
+                          ).toLocaleDateString()
+                        : "N/A"}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Form Section - Slides in from right */}
-            <div
-              className={`overflow-hidden transition-all duration-500 ${
-                showForm
-                  ? "w-1/2 opacity-100 border-l border-white/20"
-                  : "w-0 opacity-0"
-              }`}
-            >
-              <div className="p-8 w-full">
-                <h2 className="text-2xl font-bold text-white mb-6 text-center">
+            {showForm && (
+              <div className="lg:w-1/2 border-t lg:border-t-0 lg:border-l border-gray-200 p-8">
+                <h2 className="font-baloo text-3xl font-bold text-gray-700 mb-6 text-center">
                   Edit Profile
                 </h2>
-                <form className="space-y-6">
+                <form onSubmit={handleProfile} className="space-y-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2">
+                    <label className="block text-gray-700 font-semibold mb-2">
                       Full Name
                     </label>
                     <div className="relative">
                       <MdPerson
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-orange-500"
-                        size={20}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-500"
+                        size={25}
                       />
                       <input
                         type="text"
+                        name="displayName"
                         placeholder="Enter your full name"
-                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-orange-200 bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-orange-300"
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder-gray-400"
                         defaultValue={user.displayName || ""}
+                        required
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-white font-semibold mb-2">
+                    <label className="block text-gray-700 font-semibold mb-2">
                       Photo URL
                     </label>
                     <div className="relative">
                       <MdPhoto
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-orange-500"
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-green-500"
                         size={20}
                       />
                       <input
                         type="url"
+                        name="photoURL"
                         placeholder="https://example.com/photo.jpg"
-                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-orange-200 bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 placeholder-orange-300"
+                        className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder-gray-400"
                         defaultValue={user.photoURL || ""}
                       />
                     </div>
@@ -197,20 +206,20 @@ const Profile = () => {
                     <button
                       type="button"
                       onClick={() => setShowForm(false)}
-                      className="flex-1 py-3 rounded-lg border border-orange-300 text-orange-300 font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300"
+                      className="flex-1 py-3 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition-colors"
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
-                      className="flex-1 py-3 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300"
+                      className="flex-1 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
                     >
                       Save Changes
                     </button>
                   </div>
                 </form>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

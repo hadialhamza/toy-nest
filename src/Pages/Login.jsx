@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
-  const { setUser, setLoading, emailLogin, googleLogin } = useContext(AuthContext);
+  const { setUser, setLoading, emailLogin, googleLogin } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const emailRef = useRef(null);
@@ -23,7 +24,6 @@ const Login = () => {
       .then((res) => {
         toast.success("Logged In Successfully");
         setUser(res.user);
-        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -62,7 +62,6 @@ const Login = () => {
       return;
     }
 
-    // Redirect to forget password page with email
     navigate("/forget-password", { state: { email: email } });
   };
 
@@ -77,10 +76,10 @@ const Login = () => {
       <div className="w-full max-w-md rounded-2xl shadow-xl overflow-hidden bg-white">
         <div className="w-full p-8">
           <div className="text-center mb-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="font-baloo text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 mb-2">
               Welcome Back
             </h2>
-            <p className="text-gray-600 text-sm">Sign in to your account</p>
+            <p className="text-gray-600 text-lg">Sign in to your account</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-5">

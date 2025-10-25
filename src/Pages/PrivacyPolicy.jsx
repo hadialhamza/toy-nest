@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-5xl font-baloo font-bold text-gray-700 mb-4">
             Privacy Policy
           </h1>
           <p className="text-lg text-gray-600">
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
         <div className="bg-white rounded-2xl shadow-lg p-8">
           {/* Introduction */}
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-baloo font-semibold text-gray-700 mb-4">
               Your Privacy Matters
             </h2>
             <p className="text-gray-600 leading-relaxed">
