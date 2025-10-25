@@ -11,6 +11,8 @@ const Homepage = () => {
   if (loading) return <LoadingPage />;
   return (
     <div className="bg-base-200">
+      <title>Toy Nest | Home</title>
+
       <Header />
       <PopularToys />
       <Categories />

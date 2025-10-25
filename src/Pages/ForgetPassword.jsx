@@ -57,6 +57,7 @@ const ForgetPassword = () => {
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center p-4 bg-base-200">
+      <title>Toy Nest | Forget Password</title>
       <div className="w-full max-w-md rounded-2xl shadow-xl overflow-hidden bg-white border border-gray-200">
         <div className="p-8">
           <button

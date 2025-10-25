@@ -6,6 +6,7 @@ import Footer from "../Components/Footer/Footer";
 const MainLayout = () => {
   return (
     <>
+      <title>Toy Nest</title>
       <Navbar />
       <Outlet />
       <Footer />

@@ -73,6 +73,7 @@ const Login = () => {
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center p-4 bg-gray-100">
+      <title>Toy Nest | Login</title>
       <div className="w-full max-w-md rounded-2xl shadow-xl overflow-hidden bg-white">
         <div className="w-full p-8">
           <div className="text-center mb-8">
