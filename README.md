@@ -9,7 +9,7 @@ A vibrant and playful online marketplace for kids' toys, encouraging families to
 
 ## 🚀 Live Demo
 
-[**Live Site URL**](https://toy-nest-b12a9.netlify.app) | [**GitHub Repository**](https://github.com/programming-hero-web-course2/b12-a9-firesheild-hadialhamza)
+[**Live Site URL**](https://toy-nest-b12a9.netlify.app) | [**GitHub Repository**](https://github.com/hadialhamza/toy-nest.git)
 
 ## ✨ Key Features
 
