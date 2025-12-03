@@ -5,6 +5,7 @@ import useToysData from "../../Hook/useToysData";
 import LoadingPage from "../../Pages/LoadingPage";
 import Sellers from "./ImageGallery";
 import Categories from "./Categories";
+import Newsletter from "./NewsLetter";
 
 const Homepage = () => {
   const { loading } = useToysData();
@@ -17,6 +18,7 @@ const Homepage = () => {
       <PopularToys />
       <Categories />
       <Sellers />
+      <Newsletter />
     </div>
   );
 };
