@@ -5,10 +5,12 @@ import {
   UserRoundCheck,
   InfoIcon,
 } from "lucide-react";
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../../Context/AuthContext";
 
 const NavLinks = () => {
+  const { user } = useContext(AuthContext);
   const navLinks = [
     {
       id: 1,
@@ -22,18 +24,22 @@ const NavLinks = () => {
       path: "/allToys",
       icon: <BlocksIcon size={16} />,
     },
-    {
-      id: 3,
-      name: "Profile",
-      path: "/profile",
-      icon: <UserRoundCheck size={16} />,
-    },
-    {
-      id: 4,
-      name: "Learn",
-      path: "/learning",
-      icon: <GraduationCap size={20} />,
-    },
+    ...(user
+      ? [
+          {
+            id: 3,
+            name: "Profile",
+            path: "/profile",
+            icon: <UserRoundCheck size={16} />,
+          },
+          user && {
+            id: 4,
+            name: "Learn",
+            path: "/learning",
+            icon: <GraduationCap size={16} />,
+          },
+        ]
+      : []),
     {
       id: 5,
       name: "About Us",
@@ -43,7 +49,7 @@ const NavLinks = () => {
   ];
 
   const activeLink = ({ isActive }) =>
-    `flex items-center gap-1Qm transition-colors duration-200 text-lg ${
+    `flex items-center gap-1 transition-colors duration-200 text-base ${
       isActive
         ? "text-blue-700 font-bold border-b-2 border-blue-700"
         : "text-base-content/80 hover:text-base-content hover:border-b-2 "

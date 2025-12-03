@@ -10,8 +10,8 @@ const Navbar = () => {
   const { user, loading, logout } = useContext(AuthContext);
 
   return (
-    <div className="bg-base-200 shadow-xl sticky top-0 z-50 px-4 py-1">
-      <div className="w-11/12 mx-auto navbar">
+    <div className="bg-base-100/70 shadow-sm sticky top-0 z-50 px-4 glass">
+      <div className="container navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden btn btn-ghost mr-2">
@@ -54,7 +54,7 @@ const Navbar = () => {
                 <img
                   src={user.photoURL}
                   alt=""
-                  className="w-12 h-12 object-cover rounded-full ring-2 ring-primary ring-offset-base-100 ring-offset-2"
+                  className="w-10 h-10 object-cover rounded-full ring-2 ring-primary ring-offset-base-100 ring-offset-2"
                 />
               </div>
               <button

@@ -73,7 +73,7 @@ const ToyCard = ({ toy }) => {
           className="w-full px-4 py-2 lg:py-3 flex items-center justify-center gap-2 my-btn mt-auto"
         >
           <FaEye className="w-4 h-4" />
-          View Details
+          See More
         </Link>
       </div>
     </div>
