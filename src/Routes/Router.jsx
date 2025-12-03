@@ -54,11 +54,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/toy/:id",
-        element: (
-          <ProtectedRoute>
-            <ToyDetails />
-          </ProtectedRoute>
-        ),
+        element: <ToyDetails />,
       },
       {
         path: "/profile",

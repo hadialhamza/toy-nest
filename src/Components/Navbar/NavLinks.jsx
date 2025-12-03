@@ -3,6 +3,7 @@ import {
   GraduationCap,
   HomeIcon,
   UserRoundCheck,
+  InfoIcon,
 } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router";
@@ -33,10 +34,16 @@ const NavLinks = () => {
       path: "/learning",
       icon: <GraduationCap size={20} />,
     },
+    {
+      id: 5,
+      name: "About Us",
+      path: "/about",
+      icon: <InfoIcon size={16} />,
+    },
   ];
 
   const activeLink = ({ isActive }) =>
-    `flex items-center gap-1 transition-colors duration-200 text-lg ${
+    `flex items-center gap-1Qm transition-colors duration-200 text-lg ${
       isActive
         ? "text-blue-700 font-bold border-b-2 border-blue-700"
         : "text-base-content/80 hover:text-base-content hover:border-b-2 "
