@@ -31,23 +31,23 @@ const AllToys = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-base-200 min-h-screen">
       <title>Toy Nest | All Products</title>
-      <div className="w-11/12 mx-auto py-10 md:py-15 lg:py-20">
-        <div className="text-center mb-10 relative">
-          <h2 className="title font-baloo">All Toys</h2>
-          <div className="relative inline-block">
+      <div className="my-container py-10 md:py-15 lg:py-20">
+        <div className="text-center mb-8 relative bg-white p-8 md:p-12 rounded-2xl shadow-md">
+          <h2 className="title text-gradient font-baloo">All Toys</h2>
+          <div className="relative">
             <p className="subtitle">Explore our entire toy universe!</p>
             <div className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
           </div>
         </div>
 
         {/* Filters and Sorting */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 bg-white p-4 rounded-xl shadow-sm">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-gray-700">Filter By Category:</span>
+        <div className="flex flex-col md:flex-row justify-between md:items-center mb-8 gap-4 bg-white p-4 rounded-2xl shadow-md">
+          <div className="flex items-center gap-4 md:flex-1">
+            <h2 className="font-bold text-gray-700">Filter By Category:</h2>
             <select
-              className="select select-bordered w-full max-w-xs bg-gray-50"
+              className="select select-bordered bg-gray-50"
               onChange={(e) => setSelectedCategory(e.target.value)}
               value={selectedCategory}
             >
@@ -60,7 +60,7 @@ const AllToys = () => {
             </select>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center md:justify-end gap-4 md:flex-1">
             <span className="font-bold text-gray-700">Sort By Price:</span>
             <select
               className="select select-bordered w-full max-w-xs bg-gray-50"
@@ -75,7 +75,7 @@ const AllToys = () => {
         </div>
 
         {processedToys.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-7">
             {processedToys.map((toy) => (
               <ToyCard key={toy.toyId} toy={toy} />
             ))}
