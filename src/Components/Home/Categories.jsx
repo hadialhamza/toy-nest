@@ -56,25 +56,28 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className="bg-base-200 mt-5">
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="text-center mb-10">
-          <h2 className="title font-baloo text-4xl font-bold">
+    <div className="bg-base-200 mt-10 md:mt-20">
+      <div className="my-container">
+        <div className="text-center mb-10 md:mb-15 relative bg-white p-8 md:p-12 rounded-2xl shadow-md">
+          <h2 className="title font-baloo text-gradient font-bold">
             Shop by Category
           </h2>
-          <p className="text-lg text-gray-600 mt-2">
-            Find the perfect toy for every interest
-          </p>
+          <div className="relative">
+            <p className="text-lg text-gray-600 mt-2">
+              Find the perfect toy for every interest
+            </p>
+            <div className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
+          </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {categories.map((category) => (
             <div
               key={category.name}
               className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md
-                         hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                         hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
             >
               <div
-                className={`w-24 h-24 rounded-full flex items-center justify-center ${category.color}`}
+                className={`w-24 h-24 rounded-full flex items-center justify-center ${category.color} group-hover:scale-110 transition-all duration-300`}
               >
                 {category.icon}
               </div>

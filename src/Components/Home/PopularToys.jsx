@@ -12,7 +12,7 @@ const PopularToys = () => {
       <div className="my-container">
         <div className="text-center mb-10 md:mb-15 relative bg-white p-8 md:p-12 rounded-2xl shadow-md">
           <h2 className="title font-baloo text-gradient">Popular Toys</h2>
-          <div className="relative inline-block">
+          <div className="relative">
             <p className="subtitle">
               Discover our most loved and trending toys that bring joy and
               creativity to children of all ages
