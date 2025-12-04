@@ -28,15 +28,15 @@ const ToyCard = ({ toy }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:-translate-y-2 overflow-hidden border border-gray-200 flex flex-col h-full">
-      <div className="relative">
+    <div className="max-w-[350px] mx-auto bg-white rounded-3xl shadow-lg transform transition-all duration-300 ease-in-out hover:-translate-y-2 overflow-hidden border border-gray-200 flex flex-col h-full group">
+      <div className="relative group-hover:scale-105 transition-all duration-500">
         <img
           src={pictureURL}
           alt={toyName}
           className="w-full max-h-48 object-cover"
         />
         <div className="absolute top-3 left-3">
-          <span className="bg-blue-500 text-white px-2 py-1 rounded-md text-xs font-medium">
+          <span className="bg-orange-400 text-white px-2 py-1 rounded-2xl text-xs font-medium">
             {subCategory}
           </span>
         </div>
@@ -58,7 +58,7 @@ const ToyCard = ({ toy }) => {
             {renderStars(rating)}
             <span className="text-sm text-gray-600 ml-1">{rating}</span>
           </div>
-          <span className="text-md font-medium px-3 py-1 rounded-md bg-green-200 text-green-800">
+          <span className="text-sm font-medium px-3 py-1 rounded-3xl bg-green-200 text-green-800">
             {availableQuantity} Left
           </span>
         </div>
