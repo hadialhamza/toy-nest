@@ -10,8 +10,8 @@ const Navbar = () => {
   const { user, loading, logout } = useContext(AuthContext);
 
   return (
-    <div className="bg-base-100/70 shadow-sm sticky top-0 z-50 px-4 glass">
-      <div className="container navbar">
+    <div className="bg-base-100/70 shadow-sm sticky top-0 z-50 glass">
+      <div className="my-container navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden btn btn-ghost mr-2">
@@ -25,7 +25,7 @@ const Navbar = () => {
               {user && (
                 <button
                   onClick={logout}
-                  className="my-btn py-3 mt-2 flex items-center justify-center gap-2"
+                  className="my-btn py-2.5 mt-2 flex items-center justify-center gap-2"
                 >
                   <HiOutlineLogout className="text-2xl" /> Logout
                 </button>
@@ -68,7 +68,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="group my-btn flex items-center gap-2 py-3 px-6"
+              className="group my-btn flex items-center gap-2 py-2.5 px-6"
             >
               Login
               <HiOutlineLogin className="hidden sm:block text-2xl group-hover:-translate-x-1 duration-300" />{" "}

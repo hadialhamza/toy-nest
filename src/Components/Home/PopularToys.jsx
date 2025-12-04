@@ -9,7 +9,7 @@ const PopularToys = () => {
 
   return (
     <div>
-      <div className="w-11/12 mx-auto py-10 md:py-15">
+      <div className="my-container py-10 md:py-15">
         <div className="text-center mb-16 md:mb-20 relative">
           <h2 className="title font-baloo">Popular Toys</h2>
           <div className="relative inline-block">
