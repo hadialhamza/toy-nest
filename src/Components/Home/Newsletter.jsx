@@ -3,9 +3,8 @@ import { FaPaperPlane } from "react-icons/fa";
 
 const Newsletter = () => {
   return (
-    <div className="bg-white py-16">
-      <div className="w-11/12 mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-xl">
-        {/* Decorative circles */}
+    <div className="py-10 md:py-20 my-container">
+      <div className=" bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-xl">
         <div className="absolute top-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full translate-x-1/2 translate-y-1/2"></div>
 
@@ -25,10 +24,10 @@ const Newsletter = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 rounded-xl text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              className="flex-1 px-6 py-4 rounded-full border-2 border-white/60 text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
               required
             />
-            <button className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold py-4 px-8 rounded-xl transition-colors flex items-center justify-center gap-2">
+            <button className="my-btn px-8 py-4 transition-colors flex items-center justify-center gap-2">
               Subscribe <FaPaperPlane />
             </button>
           </form>

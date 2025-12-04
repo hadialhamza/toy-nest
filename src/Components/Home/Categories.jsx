@@ -56,7 +56,7 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className="bg-base-200 mt-10 md:mt-20">
+    <div className="mt-10 md:mt-20">
       <div className="my-container">
         <div className="text-center mb-10 md:mb-15 relative bg-white p-8 md:p-12 rounded-2xl shadow-md">
           <h2 className="title font-baloo text-gradient font-bold">
@@ -69,7 +69,7 @@ const Categories = () => {
             <div className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {categories.map((category) => (
             <div
               key={category.name}

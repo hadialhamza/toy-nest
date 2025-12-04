@@ -13,8 +13,8 @@ import Logo from "../Logo/Logo";
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white">
-      <div className="w-11/12 mx-auto px-4 pt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="my-container px-4 pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
             <div className="mb-3">
               <Link to="/">
@@ -65,7 +65,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h4 className="text-xl font-baloo font-semibold mb-4 text-amber-400">
               Support
             </h4>
@@ -103,7 +103,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="text-xl font-baloo font-semibold mb-4 text-amber-400">
