@@ -33,8 +33,8 @@ const AllToys = () => {
   return (
     <div className="bg-base-200 min-h-screen">
       <title>Toy Nest | All Products</title>
-      <div className="my-container py-10 md:py-15 lg:py-20">
-        <div className="text-center mb-8 relative bg-white p-8 md:p-12 rounded-2xl shadow-md">
+      <div className="my-container py-8 md:pb-15 lg:pb-20">
+        <div className="text-center mb-8 relative bg-white pb-10 pt-7 rounded-2xl shadow-md">
           <h2 className="title text-gradient font-baloo">All Toys</h2>
           <div className="relative">
             <p className="subtitle">Explore our entire toy universe!</p>

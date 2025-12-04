@@ -79,9 +79,9 @@ const LearningCenter = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-base-200 py-12 px-4">
+    <div className="min-h-screen bg-base-200 py-12">
       <title>Toy Nest | Learning Center</title>
-      <div className="max-w-6xl mx-auto">
+      <div className="my-container">
         <div className="text-center mb-12">
           <h1 className="title font-baloo">Learning Through Play</h1>
           <p className="subtitle">

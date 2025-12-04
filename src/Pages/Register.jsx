@@ -78,7 +78,7 @@ const Register = () => {
   };
 
   const btnClass =
-    "group w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-semibold hover:bg-gray-50 transition-colors duration-200 active:scale-[0.98]";
+    "group w-full flex items-center justify-center gap-3 py-3 px-4 rounded-full border border-gray-300 bg-white text-gray-700 font-semibold hover:bg-gray-50 transition-colors duration-200 active:scale-[0.98]";
 
   const inputClass =
     "w-full pl-12 pr-10 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder-gray-400";

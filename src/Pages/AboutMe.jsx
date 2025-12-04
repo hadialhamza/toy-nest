@@ -40,9 +40,9 @@ const AboutMe = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-base-200 py-12 px-4">
+    <div className="min-h-screen bg-base-200 py-12">
       <title>About Me</title>
-      <div className="max-w-4xl mx-auto">
+      <div className="my-container">
         <div className="text-center mb-12">
           <h1 className="title font-baloo">About My Self</h1>
           <p className="text-gray-600 text-lg">

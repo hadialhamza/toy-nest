@@ -28,7 +28,7 @@ const Header = () => {
         "Discover toys that combine fun with learning, helping children develop essential skills while having a great time.",
       buttonText: "View Learning Toys",
       buttonLink: "/allToys",
-      overlay: "from-amber-600/70 to-orange-700/70",
+      overlay: "from-rose-600/70 to-orange-700/70",
       toyImg:
         "https://static.vecteezy.com/system/resources/previews/057/435/472/large_2x/magnificent-traditional-financial-charts-on-whiteboard-isolated-high-quality-free-png.png",
     },

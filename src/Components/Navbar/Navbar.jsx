@@ -46,7 +46,7 @@ const Navbar = () => {
               <div className="hidden lg:block skeleton w-34 h-12 rounded-lg"></div>
             </div>
           ) : user ? (
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 xl:gap-8">
               <div
                 className="tooltip tooltip-bottom"
                 data-tip={user.displayName}

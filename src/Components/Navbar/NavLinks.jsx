@@ -51,12 +51,12 @@ const NavLinks = () => {
   const activeLink = ({ isActive }) =>
     `flex items-center gap-1 transition-colors duration-200 text-base ${
       isActive
-        ? "text-blue-700 font-bold border-b-2 border-blue-700"
-        : "text-base-content/80 hover:text-base-content hover:border-b-2 "
+        ? "text-orange-600 font-bold border-b-2 border-orange-600"
+        : "text-base-content/80 hover:text-orange-500 hover:border-b-2 "
     }`;
 
   return (
-    <ul className="flex flex-col lg:flex-row gap-2 lg:gap-8 list-none text-base font-medium">
+    <ul className="flex flex-col lg:flex-row gap-4 md:gap-6 xl:gap-8 list-none text-base font-medium">
       {navLinks.map((link) => (
         <li key={link.id}>
           <NavLink to={link.path} className={activeLink}>

@@ -18,8 +18,8 @@ const Slider = (slide) => {
 
       <div className="relative h-full flex items-center">
         <div className="w-full my-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="md:col-span-2 bg-white/10 backdrop-blur-md border border-white/20 p-5 md:p-10 rounded-3xl shadow-2xl">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-12">
+            <div className="md:col-span-2 bg-white/10 backdrop-blur-md border border-white/20 p-5 md:p-10 rounded-3xl shadow-2xl hover:-translate-y-3 transition-transform duration-500">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/20 border border-yellow-400/30 text-yellow-300 md:text-sm font-bold mb-2 text-xs md:mb-6"
                 data-aos="fade-down"
@@ -28,7 +28,7 @@ const Slider = (slide) => {
                 <FaRegistered /> Featured Collection
               </div>
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 font-baloo leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 font-baloo leading-tight"
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
@@ -39,7 +39,7 @@ const Slider = (slide) => {
               </h1>
 
               <p
-                className="text-lg text-gray-100 mb-8 leading-relaxed opacity-90"
+                className="md:text-lg text-gray-100 mb-4 md:mb-8 leading-relaxed opacity-90"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -58,18 +58,17 @@ const Slider = (slide) => {
               </div>
             </div>
 
-            <div className="hidden lg:flex justify-center items-center relative z-10">
-              {/* Glow Effect behind image */}
-              <div className="absolute w-96 h-96 bg-white/30 rounded-full blur-3xl animate-pulse"></div>
-
-              {/* Floating Image */}
-              <img
-                src={slide.toyImg}
-                alt="Featured Toy"
-                className="w-full max-w-lg object-contain drop-shadow-2xl animate-float-gentle transform -rotate-12 hover:rotate-0 transition-transform duration-500"
-                data-aos="zoom-in-left"
-                data-aos-delay="300"
-              />
+            <div className="hidden xl:flex justify-center items-center relative z-10 hover:-translate-y-3 transition-transform duration-500">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-5 md:p-10 rounded-3xl shadow-2xl">
+                <div className="absolute w-96 h-96 bg-black/20 rounded-full blur-3xl animate-pulse"></div>
+                <img
+                  src={slide.toyImg}
+                  alt="Featured Toy"
+                  className="w-full max-w-lg object-contain drop-shadow-2xl animate-float-gentle transform -rotate-12 hover:rotate-0 transition-transform duration-500"
+                  data-aos="zoom-in-left"
+                  data-aos-delay="300"
+                />
+              </div>
             </div>
           </div>
         </div>

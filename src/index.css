@@ -34,7 +34,7 @@ body {
 }
 
 .subtitle {
-  @apply text-lg md:text-xl text-gray-500 max-w-3xl mx-auto font-medium;
+  @apply md:text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto font-medium;
 }
 
 .text-gradient {

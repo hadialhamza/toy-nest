@@ -8,7 +8,7 @@ const PopularToys = () => {
   const { toys } = useToysData();
 
   return (
-    <div className="mt-10 md:mt-20">
+    <div className="mt-10 md:mt-20 bg-base-200">
       <div className="my-container">
         <div className="text-center mb-10 md:mb-15 relative bg-white p-8 md:p-12 rounded-2xl shadow-md">
           <h2 className="title font-baloo text-gradient">Popular Toys</h2>
