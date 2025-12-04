@@ -17,7 +17,7 @@ const TryNowForm = ({ toyName }) => {
   };
 
   return (
-    <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 mt-10">
+    <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-xl w-full">
         <h2 className="title font-baloo text-center !text-4xl">
           Want to try it out?

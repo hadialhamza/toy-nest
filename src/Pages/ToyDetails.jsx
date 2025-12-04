@@ -28,7 +28,7 @@ const ToyDetails = () => {
 
   return (
     <div className="min-h-screen bg-base-200 py-12">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="my-container">
         <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 flex items-center justify-center">
@@ -39,7 +39,7 @@ const ToyDetails = () => {
               />
             </div>
 
-            <div className="p-8 lg:p-10">
+            <div className="p-8 lg:p-10 my-auto">
               <div className="space-y-6">
                 <div>
                   <h1 className="text-4xl font-baloo lg:text-5xl font-bold text-gray-700 mb-4">
